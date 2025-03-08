@@ -14,7 +14,7 @@ class DashboardController extends Controller
     {
         $data = [
             'title' => 'Dashboard',
-            'paegs' => 'Dashboard',
+            'pages' => 'Dashboard',
         ];
 
         return view('backend.index', $data);

@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>Blank Page &mdash; Stisla</title>
+    <title>{{ $pages }} &mdash; {{ config('app.name') }}</title>
 
     <!-- General CSS Files -->
     <link rel="stylesheet" href="{{ asset('assets/modules/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/modules/fontawesome/css/all.min.css') }}">
 
     <!-- CSS Libraries -->
+    <link rel="stylesheet" href="{{ asset('assets/modules/select2/dist/css/select2.min.css') }}">
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
@@ -108,8 +109,8 @@
                                 <span>Dashboard</span>
                             </a>
                         </li>
-                        <li class="">
-                            <a class="nav-link" href="{{ route('dashboard') }}">
+                        <li class="{{ request()->routeIs('pesanan*') ? 'active' : '' }}">
+                            <a class="nav-link" href="{{ route('pesanan.index') }}">
                                 <i class="fas fa-shopping-cart"></i>
                                 <span>Pesanan Baru</span>
                             </a>
@@ -143,8 +144,10 @@
     <script src="{{ asset('assets/js/stisla.js') }}"></script>
 
     <!-- JS Libraies -->
+    <script src="{{ asset('assets/modules/select2/dist/js/select2.full.min.js') }}"></script>
 
     <!-- Page Specific JS File -->
+    @yield('scripts')
 
     <!-- Template JS File -->
     <script src="{{ asset('assets/js/scripts.js') }}"></script>

@@ -35,4 +35,9 @@ return [
         ],
     ],
 
+    'buzzerpanel' => [
+        'url' => env('BUZZERPANEL_API_URL', 'https://buzzerpanel.id/api/json.php'),
+        'api_key' => env('API_KEY', 'default_api_key'),
+        'secret_key' => env('SECRET_KEY', 'default_secret_key'),
+    ],
 ];
