@@ -14,4 +14,6 @@ Route::prefix('/')->group(function () {
 
 Route::prefix('pesanan')->name('pesanan.')->group(function () {
     Route::get('/', [PesananController::class, 'index'])->name('index');
+    Route::get('/get-layanan', [PesananController::class, 'getLayanan'])->name('get.layanan');
+    Route::post('/buat-pesanan', [PesananController::class, 'buatPesanan'])->name('buat.pesanan');
 });
